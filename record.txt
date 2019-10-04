@@ -1,0 +1,50 @@
+#最後svg動畫和theta vs w的圖會畫這個episode的結果
+print_this_episode_number=1423
+count=0
+#能擺動的最大力矩
+L_m=1#1
+#現在這個state的力矩大小 可以是L_m,0,-L_m
+L=0
+#現在的角度（是弧度）
+theta=0
+#現在的角速度
+w=0
+#現在的角加速度
+alpha=0
+#重力大小
+g=9.98
+#模型的時間間隔
+delta_t=0.01#0.001
+#總時間
+total_time=0.0
+#最大時間
+max_total_time=5000.0
+#畫圖的時間間隔
+draw_delta_t=0.01
+#木棒的長度
+R=0.5#0.5
+#畫圖的木棒長度
+draw_R=50
+#球的質量
+m=0.5
+#阻力係數k*w
+k=0.01
+#電機沒有力矩的阻力係數（目前還沒用）
+k2=0.005
+#畫圖的時間軸
+i=0
+#目前找到最大路徑是哪個episode
+max_x_num=-1
+#最大路徑episode丟出的距離
+max_x_val=-2147483647
+#即時的reward，此係數乘上總能量當作reward
+energy_coefficient=1
+#最後的reward，此係數乘上拋出的距離當作最後的reward
+last_coefficient=1
+#即時的reward，此係數呈上能量差當作reward
+energy_diff_coefficient=10#1.1 (10 0.38) (1 0.36)  (0.1 0.33)          
+#算法跑幾個episode
+num_episode=5000
+# reproducible
+np.random.seed(1)
+tf.set_random_seed(1)
